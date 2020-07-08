@@ -5,6 +5,7 @@ using UnityEngine;
 public class carSelection : MonoBehaviour
 {
     private GameObject[] carList;
+    private int currentCar = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -26,8 +27,22 @@ public class carSelection : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update() {
-        
+    public void ToggleCars(string direction) {
+        carList[currentCar].SetActive(false);
+
+        if (direction == "Right") {
+            currentCar++;
+            if (currentCar > carList.Length - 1) {
+                currentCar = 0;
+            }
+        } else if (direction == "Left") {
+            currentCar--;
+            if (currentCar < 0) {
+                currentCar = carList.Length - 1;
+            }
+        }
+
+        //set the current car to be active from the list
+        carList[currentCar].SetActive(true);
     }
 }
