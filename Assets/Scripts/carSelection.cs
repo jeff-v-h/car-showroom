@@ -6,42 +6,53 @@ public class carSelection : MonoBehaviour
     private int currentCar = 0;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         carList = new GameObject[transform.childCount];
 
         // Loop through the child items and fill the list in the correct slots
-        for (int i = 0; i < transform.childCount; ++i) {
+        for (int i = 0; i < transform.childCount; ++i)
+        {
             carList[i] = transform.GetChild(i).gameObject;
         }
 
         // Deactivate all the gameObjects in the list
-        foreach(GameObject gameObj in carList) {
+        foreach (GameObject gameObj in carList)
+        {
             gameObj.SetActive(false);
         }
 
         // Set the initial GO (GameObject) to be active
-        if (carList[0]) {
+        if (carList[0])
+        {
             carList[0].SetActive(true);
         }
     }
 
-    public void ToggleCars(string direction) {
+    public void ToggleCars(string direction)
+    {
         carList[currentCar].SetActive(false);
 
-        if (direction == "Right") {
+        if (direction == "Right")
+        {
             currentCar++;
-            if (currentCar > carList.Length - 1) {
+            if (currentCar > carList.Length - 1)
+            {
                 currentCar = 0;
             }
-        } else if (direction == "Left") {
+        }
+        else if (direction == "Left")
+        {
             currentCar--;
-            if (currentCar < 0) {
+            if (currentCar < 0)
+            {
                 currentCar = carList.Length - 1;
             }
         }
 
         //set the current car to be active from the list
         carList[currentCar].SetActive(true);
+        gameController.currentSelectedCar = carList[currentCar].name;
         // Get the cloudParticle prefab we created in Resources folder to add to the car
         GameObject cloudSystem = (GameObject)Instantiate(Resources.Load("cloudParticle"));
         // Create dynamic particle system named cloudPuff which will grab the loaded cloudSystem
