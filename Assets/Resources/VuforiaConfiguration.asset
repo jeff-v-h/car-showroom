@@ -9,24 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: 4bc5fd733b147194692297d23f623541, type: 3}
+  m_Script: {fileID: -2067402452, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: 
-    ufoLicenseKey: QVZGbDFkdi8vLy8vQUFBQUtOMUp6SmgrZDBDV3VEWnp5QzBpTm9NSDJ6aEpkb2dsYkNEYjhwRXFTUk43ZmpRVlk0a2NlTEt1ZituY0J2c3FlV2Jab3NHU09yclpFVzNRakMyZG9HVWFDSG82aHlHM05GSEhWSzJXVEZRbjdnVUpQL293NGtkSmNtVjNYZm5LS2h1ZklSM3RFdDg4azlqaVNqc0grZmhaZWREZmQ4VnlnWjNzMVRURkJFME1oSGFqYUJVS2VqdkhiQUtlUWQzc21Hb1l2Snh3alZtTmk3SWFnR0txTzZSK3B2SkNYRU44enZRRnFjZnpUNXNjdndtdHhOSzNFYS9ISUpBUFFuaktpbXg4RHN0eW5CdDNKZHE1Z1VBUHlGSG9OM3IvcWRZeENwOGtvLzBMNk1LbTRDNWI5R05PRHNlUDhDZitkb1RiQUJRb3F4UnR6SnczYWExMWpRaVBMbG9MSnBENnp1dmtzYWN4YXF1ZWY4dEo=
+    ufoLicenseKey: QVNWcnlsci8vLy8vQUFBQUtQYW5mMFd1WkVpemx5eEV5ZzNNbFZBVS8xVUkxOXlNbFhVR2R4QmVWMTlGVTllVHhPS05xVHlHNDR1UjR2M3A3bklhVU5VSDh5Q3Q4UkRvMk1XREt2STd1azcrMm45V0dRUW5GTTVDbHFBbVg5L2RnRUI4ZElLRkd4bkFud0NUOFQxMVN0ZHErSlpLZmFoTUZmbTVxY0ZFS0YxbVBPdFJEcnRYUVc1a2M3NmtoVDVVZGx6K25lcy9RdkNMQjRpVGVqYWRjcEl5VFdYd0VkMTBKVUFkL1B0bC9jUUJlajNrdGs5WUxLVzZaY296VDVuQXdyRjhUSlJuTlNWSjN1ZzlaZ2xEM0Ewdmd2TVNpcmk2WXZKa28wQzM0QU9URVVJQmw3Y0pYN09pQ2FjcEdsRlZBY1M2V3B5ajFhKzRVVk5jYnlWYUFvSXNBb3BuZjhGNm9RUmEvbFZvT3gxZ1MwYS9OZEVaUW9yQnZqM3Q=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
+    maxSimultaneousImageTargets: 4
     maxSimultaneousObjectTargets: 1
     virtualSceneScaleFactor: 1
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
     version: 9.2.8
-    eulaAcceptedVersions: '{"Values":["9.2"]}'
+    eulaAcceptedVersions: '{"Values":["","9.2","0.0"]}'
     modelTargetMode: 0
   database:
-    disableModelExtraction: 0
+    disableModelExtraction: 1
   videoBackground:
     numDivisions: 2
     videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
