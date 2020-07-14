@@ -36,8 +36,9 @@ public class carController : MonoBehaviour {
 	}
 
 	//Called from _Handle
- 	public void triggerAnimation(string action){
-		anim.SetTrigger (action);
+ 	public void triggerAnimation(string action) {
+		anim = GameObject.Find("/UserDefinedTarget-1/activeItems/" + gameController.currentSelectedCar).GetComponent<Animator>();
+		anim.SetTrigger(action);
 	}
 
 	//Called from _Handle

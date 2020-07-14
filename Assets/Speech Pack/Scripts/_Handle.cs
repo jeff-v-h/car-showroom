@@ -42,6 +42,7 @@ public partial class Wit3D : MonoBehaviour
             return;
         }
 
+        carController.instance.triggerAnimation("openDriversDoor");
         myHandleTextBox.text = rootObject.intents.First().name.Replace('_', ' ');
         actionFound = true;
     }//END OF HANDLE VOID
