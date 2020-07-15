@@ -5,6 +5,7 @@ using UnityEngine;
 public class carController : MonoBehaviour {
 
 	Animator anim;
+	AudioSource audio;
  	public static carController instance;
 
 	//Create a cloned object so we can access the functions
@@ -36,14 +37,27 @@ public class carController : MonoBehaviour {
 	}
 
 	//Called from _Handle
- 	public void triggerAnimation(string action) {
+ 	public void triggerAnimation(string action)
+	{
 		anim = GameObject.Find("/UserDefinedTarget-1/activeItems/" + gameController.currentSelectedCar).GetComponent<Animator>();
 		anim.SetTrigger(action);
 	}
 
 	//Called from _Handle
-	public void showMessage(){
+	public void showMessage()
+	{
 		//TODO
 	}
 
+	public void playSound()
+    {
+		audio = GameObject.Find("/UserDefinedTarget-1/activeItems/" + gameController.currentSelectedCar).GetComponent<AudioSource>();
+		audio.Play();
+	}
+
+	public void stopSound()
+    {
+		audio = GameObject.Find("/UserDefinedTarget-1/activeItems/" + gameController.currentSelectedCar).GetComponent<AudioSource>();
+		audio.Stop();
+	}
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,22 +20,11 @@ public partial class Wit3D : MonoBehaviour
             RootObject theAction = new RootObject();
             JsonConvert.PopulateObject(jsonString, theAction);
 
-            GetIntent(theAction);
-
-            if (!actionFound)
-            {
-                myHandleTextBox.text = "Request unknown, please ask a different way.";
-            }
-            else
-            {
-                actionFound = false;
-            }
-
+            HandleActionObject(theAction);
         }//END OF IF
-
     }
 
-    void GetIntent(RootObject rootObject)
+    void HandleActionObject(RootObject rootObject)
     {
         if (rootObject == null || rootObject.intents == null || rootObject.intents.Count < 1)
         {
@@ -42,10 +32,69 @@ public partial class Wit3D : MonoBehaviour
             return;
         }
 
-        carController.instance.triggerAnimation("openDriversDoor");
-        myHandleTextBox.text = rootObject.intents.First().name.Replace('_', ' ');
+        var intent = rootObject.intents.First().name;
+        TriggerActions(intent, rootObject.entities);
+        DisplayIntent(intent, rootObject.entities);
         actionFound = true;
-    }//END OF HANDLE VOID
+
+        if (!actionFound)
+        {
+            myHandleTextBox.text = "Request unknown, please ask a different way.";
+        }
+        else
+        {
+            actionFound = false;
+        }
+    }
+
+    void TriggerActions(string intent, Entities entities)
+    {
+        if (intent.Contains("engine"))
+        {
+            if (intent.Contains("start"))
+            {
+                carController.instance.playSound();
+                return;
+            }
+            else if (intent.Contains("stop"))
+            {
+                carController.instance.stopSound();
+                return;
+            }
+        }
+
+        if (intent == "change_colour")
+        {
+            return;
+        }
+
+        var command = GetActionCommand(intent);
+        carController.instance.triggerAnimation(command);
+    }
+
+    void DisplayIntent(string intent, Entities entities)
+    {
+        var sentence = intent.Replace('_', ' ');
+        if (intent == "change_colour")
+        {
+            sentence += " " + entities.colour.First().value;
+        }
+        myHandleTextBox.text = sentence;
+    }
+
+    string GetActionCommand(string input)
+    {
+        var parts = input.Split('_');
+        var sb = new StringBuilder(parts[0]);
+        for (int i = 1; i < parts.Length; i++)
+        {
+            var capitalised = parts[i].First().ToString().ToUpper() + parts[i].Substring(1);
+            sb.Append(capitalised);
+        }
+
+        return sb.ToString();
+    }
+    //END OF HANDLE VOID
 
 }//END OF CLASS
 
@@ -72,6 +121,9 @@ public class Entities
 
     [JsonProperty("close:close")]
     public List<PotentialEntity> close { get; set; }
+
+    [JsonProperty("colour:colour")]
+    public List<PotentialEntity> colour { get; set; }
 }
 
 public class Intent
