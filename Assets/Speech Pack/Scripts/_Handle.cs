@@ -65,6 +65,11 @@ public partial class Wit3D : MonoBehaviour
 
         if (intent == "change_colour")
         {
+            if (entities.colour == null || entities.colour.Count < 1)
+            {
+                return;
+            }
+            colourSwitcher.instance.colours(entities.colour.First().value);
             return;
         }
 
@@ -77,6 +82,11 @@ public partial class Wit3D : MonoBehaviour
         var sentence = intent.Replace('_', ' ');
         if (intent == "change_colour")
         {
+            if (entities.colour == null || entities.colour.Count < 1)
+            {
+                myHandleTextBox.text = "Colour could not be obtained";
+                return;
+            }
             sentence += " " + entities.colour.First().value;
         }
         myHandleTextBox.text = sentence;

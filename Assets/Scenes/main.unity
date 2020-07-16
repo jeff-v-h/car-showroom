@@ -764,6 +764,48 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 911600130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1403482885595386, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1036451044220652, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1295475592423264, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1680698414068356, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995280098237298, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1352569197875702, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &911600138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1425928785472778, guid: 7bab2ff39b8f341509fdaff8c6ba3ce3,
+    type: 3}
+  m_PrefabInstance: {fileID: 911600130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981578745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2087,13 +2129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carParts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 911600138}
+  - {fileID: 911600137}
+  - {fileID: 911600134}
+  - {fileID: 911600133}
+  - {fileID: 911600135}
+  - {fileID: 911600136}
+  - {fileID: 911600132}
 --- !u!1 &1829455313
 GameObject:
   m_ObjectHideFlags: 0
